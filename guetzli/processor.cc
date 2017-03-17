@@ -745,8 +745,9 @@ bool Processor::ProcessJpegData(const Params& params, const JPEGData& jpg_in,
   if (params.butteraugli_target > 2.82f) {
     fprintf(stderr,
             "Guetzli should be called with quality >= 84, otherwise the\n"
-            "output will have noticeable artifacts. If you want to\n"
-            "proceed anyway, please edit the source code.\n");
+            "output will have noticeable artifacts. The current lowest\n"
+            "possible quality setting is >=70. If you want to proceed\n"
+            "anyway, please edit the source code.\n");
     return false;
   }
   if (jpg_in.components.size() != 3 || !HasYCbCrColorSpace(jpg_in)) {
